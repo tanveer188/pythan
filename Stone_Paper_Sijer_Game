@@ -1,0 +1,40 @@
+import  random
+import  time
+i = 0
+l = ("Stone","Paper","Sijer")
+computer_win = 0
+player_win = 0
+match_draw = 0
+while(i<=9):
+	time.sleep(2)
+	
+	random_option = random.choice(l)
+	
+	i = i + 1
+	try:	choice=int(input("Enter 1 for Stone \nand 2 for  Paper \nand 3 for sijer \n"))
+	except :
+		print("Please Enter a number")
+	if choice == 1 :
+		player_choice = "Stone"
+	elif choice==2:
+		player_choice = "Paper"
+	elif choice ==3:
+		player_choice = "Sijer"
+	else:
+		print("Unexepted No.")
+		i = i -1
+		continue
+	if random_option == player_choice:
+		print('draw')
+		match_draw = match_draw+1
+		print("You choice",player_choice,"and computer ", random_option)
+	elif random_option == "Stone" and player_choice=="Paper" or random_option == "Sijer" and player_choice=="Stone" or random_option == "Paper" and player_choice=="Sijer":
+		print("you win")
+		player_win = player_win + 1
+		print("You choice",player_choice,"and computer ", random_option)
+	elif random_option == "Paper" and player_choice=="Stone" or random_option == "Stone" and player_choice=="Sijer" or random_option == "Sijer" and player_choice=="Paper":
+		print("you loos")
+		computer_win = computer_win+ 1
+		print("You choice",player_choice,"and computer ", random_option)
+
+print("you win =",player_win,"you Lose =",computer_win,"draw =",match_draw)
