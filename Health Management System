@@ -48,6 +48,6 @@ elif character == "rohan":
 	else:
 		print("plese input a vaild no.")
 else:
-	print("error will occur")	
+	print("error will occuring")	
 		
 		
